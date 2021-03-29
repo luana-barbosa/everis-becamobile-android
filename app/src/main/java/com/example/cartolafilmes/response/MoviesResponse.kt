@@ -1,10 +1,12 @@
 package com.example.cartolafilmes.response
 
-data class FilmesListResponse(
-    var Filmes: ArrayList<Filmes>? = null
+import com.example.cartolafilmes.model.Movies
+
+data class MoviesListResponse(
+    var movies: ArrayList<Movies>? = null
 )
 
-data class Filmes (
+data class Movies (
 var title: String? = "",
 
 var overview: String? = "",

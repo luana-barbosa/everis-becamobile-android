@@ -8,11 +8,6 @@
     android:background="@color/gold"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/"/>
-
     <TextView
         android:id="@+id/app_name"
         android:layout_width="match_parent"
@@ -45,7 +40,15 @@
         android:id="@+id/fl_wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/app_bar_inf" />
+        android:layout_above="@id/app_bar_inf"
+        android:layout_marginBottom="-103dp" >
+
+        <ImageView
+            android:layout_width="66dp"
+            android:layout_height="42dp"
+            android:layout_weight="0.3"
+            android:src="@drawable/cartola" />
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/app_bar_inf"
