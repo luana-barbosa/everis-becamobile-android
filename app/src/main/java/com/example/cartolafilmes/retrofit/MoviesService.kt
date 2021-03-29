@@ -1,10 +1,12 @@
 package com.example.cartolafilmes.retrofit
 
-import android.telecom.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 import com.example.cartolafilmes.response.MoviesListResponse
 
 interface MoviesService {
-   @GET("3/trending/all/week?api_key=2af7a036f996b226bc467aa4f716139b&language=pt-BR")
-    fun getMovies() : Call<MoviesListResponse>
+   @GET("3/trending/all/week?")
+   fun getMovies(@Query("api_key") key: String,
+                 @Query ("language") language: String):
+           retrofit2.Call<MoviesListResponse>
 }
