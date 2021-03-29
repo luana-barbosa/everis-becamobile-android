@@ -9,15 +9,41 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cartola Filmes"
-        android:gravity="center"
+        android:layout_row="0"
+        android:layout_column="1"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Cartola Filmes"
         android:textColor="#DAA520"
-        android:textStyle="bold"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="410dp"
+        android:layout_height="593dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnSpan="10"
+        android:layout_marginTop="50dp"
+        android:clipToPadding="false"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/app_bar_inf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="#DAA520"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_menu" />
 
 </com.google.android.material.circularreveal.CircularRevealGridLayout>
