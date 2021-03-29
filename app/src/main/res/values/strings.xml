@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CartolaFilmes</string>
+    <string name="home">Inicio</string>
+    <string name="favorite">Favoritos</string>
+    <string name="person">Perfil</string>
+    <string name="search">Pesquisar</string>
 </resources>
