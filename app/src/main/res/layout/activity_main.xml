@@ -5,8 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
+    android:background="@color/gold"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/"/>
 
     <TextView
         android:id="@+id/app_name"
@@ -19,9 +24,10 @@
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="Cartola Filmes"
-        android:textColor="@color/gold"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list"
@@ -47,9 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/gold"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
+        app:itemBackground="@color/black"
+        app:itemIconTint="@color/gold"
+        app:itemTextColor="@color/gold"
         app:menu="@menu/bottom_menu" />
 
 </RelativeLayout>
