@@ -17,9 +17,7 @@ class MoviesAdapter (var movies: List<Movies>) : RecyclerView.Adapter<MoviesAdap
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item,
             parent,false)
-        val holder = ViewHolder(view)
-
-        return holder
+        return ViewHolder(view)
    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -41,10 +39,6 @@ class MoviesAdapter (var movies: List<Movies>) : RecyclerView.Adapter<MoviesAdap
         val title: TextView = itemView.findViewById(R.id.title_movie)
         val poster_path: ImageView = itemView.findViewById(R.id.poster_movie)
         val moviesView: CircularRevealGridLayout = itemView.findViewById(R.id.moviesView)
-        //val backdrop_path: TextView = itemView.findViewById(R.id.title_movie)
-        //val overview: TextView = itemView.findViewById(R.id.title_movie)
-        //val vote_average: TextView = itemView.findViewById(R.id.title_movie)
-        //val popularity: TextView = itemView.findViewById(R.id.title_movie)
 
     }
 }
