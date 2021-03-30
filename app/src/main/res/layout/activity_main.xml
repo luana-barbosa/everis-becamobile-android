@@ -15,7 +15,6 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:weightSum="1">
-
     </LinearLayout>
 
     <com.google.android.material.circularreveal.CircularRevealFrameLayout
@@ -45,9 +44,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="Cartola Filmes"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_700"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_anchor="@+id/linearLayout"

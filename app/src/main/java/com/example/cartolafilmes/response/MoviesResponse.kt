@@ -12,13 +12,13 @@ var title: String? = "",
 
 var overview: String? = "",
 
-var release_date: String? = "",
+var releaseDate: String? = "",
 
-var backdrop_path: String? = "",
+var backdropPath: String? = "",
 
-var poster_path: String? = "",
+var posterPath: String? = "",
 
-var vote_average: String? = "",
+var voteAverage: String? = "",
 
 var popularity: String? = "",
 )

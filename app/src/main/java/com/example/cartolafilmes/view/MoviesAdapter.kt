@@ -29,7 +29,7 @@ class MoviesAdapter (private val movies: List<Movie>, private val context: Conte
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if(!movies[position].posterPath.isNullOrEmpty())
+        if(movies[position].posterPath.isNotEmpty())
             Picasso.get().load(movies[position].posterPath).into(holder.posterPath)
         holder.title.text = movies[position].title
         holder.moviesView.setOnClickListener{

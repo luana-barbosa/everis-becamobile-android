@@ -16,11 +16,11 @@ class MoviesRepository {
             result.body()?.results?.forEach { moviesResponse ->
                 val movies = Movie()
                 movies.title = moviesResponse.title ?: ""
-                movies.posterPath = moviesResponse.poster_path ?: ""
-                movies.backdropPath = moviesResponse.backdrop_path ?: ""
+                movies.posterPath = moviesResponse.posterPath ?: ""
+                movies.backdropPath = moviesResponse.backdropPath ?: ""
                 movies.overview = moviesResponse.overview ?: ""
-                movies.releaseDate = moviesResponse.release_date?: ""
-                movies.voteAverage = moviesResponse.vote_average ?: ""
+                movies.releaseDate = moviesResponse.releaseDate?: ""
+                movies.voteAverage = moviesResponse.voteAverage ?: ""
                 movies.popularity = moviesResponse.popularity ?: ""
 
                 moviesList.add(movies)
