@@ -9,11 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cartolafilmes.R
-import com.example.cartolafilmes.response.Movies
+import com.example.cartolafilmes.model.Movie
 import com.google.android.material.circularreveal.CircularRevealGridLayout
 import com.squareup.picasso.Picasso
+import java.io.Serializable
 
-class MoviesAdapter (private val movies: List<Movies>, private val context: Context)
+class MoviesAdapter (private val movies: List<Movie>, private val context: Context)
     : RecyclerView.Adapter<MoviesAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,21 +29,19 @@ class MoviesAdapter (private val movies: List<Movies>, private val context: Cont
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if(movies[position].poster_path.isNotEmpty())
-            Picasso.get().load(movies[position].poster_path).into(holder.poster_path)
+        if(!movies[position].posterPath.isNullOrEmpty())
+            Picasso.get().load(movies[position].posterPath).into(holder.posterPath)
         holder.title.text = movies[position].title
         holder.moviesView.setOnClickListener{
             val intent = Intent(holder.moviesView.context, DetailsMovies ::class.java)
-            intent.putExtra("extra_movies", movies[position])
+            intent.putExtra("extra_movies", movies[position] as Serializable)
             holder.moviesView.context.startActivity(intent)
         }
     }
 
-
-
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val title: TextView = itemView.findViewById(R.id.title_movie)
-        val poster_path: ImageView = itemView.findViewById(R.id.poster_movie)
+        val posterPath: ImageView = itemView.findViewById(R.id.poster_movie)
         val moviesView: CircularRevealGridLayout = itemView.findViewById(R.id.moviesView)
 
     }

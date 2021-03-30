@@ -3,18 +3,18 @@ package com.example.cartolafilmes.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-open class Movies (
-    var title: String,
+open class Movie {
+    var title: String = ""
 
-    var overview: String,
+    var overview: String = ""
 
-    var release_date: String,
+    var releaseDate: String = ""
 
-    var backdrop_path: String,
+    var backdropPath: String = ""
 
-    var poster_path: String,
+    var posterPath: String = ""
 
-    var vote_average: String,
+    var voteAverage: String = ""
 
-    var popularity: String,
-)
+    var popularity: String = ""
+}

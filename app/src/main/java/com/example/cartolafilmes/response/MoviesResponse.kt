@@ -1,9 +1,10 @@
 package com.example.cartolafilmes.response
 
-import com.example.cartolafilmes.model.Movies
+import kotlinx.serialization.SerialName
 
 data class MoviesListResponse(
-    var movies: ArrayList<Movies>? = null
+    var results: ArrayList<Movies>? = null,
+ var page: String? = ""
 )
 
 data class Movies (

@@ -4,7 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cartolafilmes.model.Movies
+import com.example.cartolafilmes.model.Movie
 import com.example.cartolafilmes.repository.MoviesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,7 +13,7 @@ class MoviesViewModel : ViewModel(){
 
     private var moviesRepository : MoviesRepository = MoviesRepository()
 
-    private val moviesList: MutableLiveData<List<Movies>> = MutableLiveData()
+    private val moviesList: MutableLiveData<List<Movie>> = MutableLiveData()
 
     fun getMovies() {
         viewModelScope.launch (Dispatchers.IO){
@@ -22,6 +22,6 @@ class MoviesViewModel : ViewModel(){
     }
     fun observeMovies(
             lifecycleOwner: LifecycleOwner,
-            action: (List<Movies>) -> Unit
+            action: (List<Movie>) -> Unit
     ) = moviesList.observe(lifecycleOwner, { action(it)})
 }
