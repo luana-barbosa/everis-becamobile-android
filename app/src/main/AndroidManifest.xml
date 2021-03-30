@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CartolaFilmes">
-        <activity android:name=".view.DetailsMovies"></activity>
+        <activity android:name=".MainFragment"></activity>
+        <activity android:name=".view.DetailsMovies" />
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

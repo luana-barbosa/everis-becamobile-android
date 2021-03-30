@@ -1,21 +1,20 @@
 package com.example.cartolafilmes.model
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.serialization.Serializable
 
-@Parcelize
+@Serializable
 open class Movies (
-    var title: String = "",
+    var title: String,
 
-    var overview: String = "",
+    var overview: String,
 
-    var release_date: String = "",
+    var release_date: String,
 
-    var backdrop_path: String = "",
+    var backdrop_path: String,
 
-    var poster_path: String = "",
+    var poster_path: String,
 
-    var vote_average: String = "",
+    var vote_average: String,
 
-    var popularity: String = "",
-) : Parcelable
+    var popularity: String,
+)
