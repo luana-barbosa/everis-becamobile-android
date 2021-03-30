@@ -13,7 +13,7 @@ class MoviesViewModel : ViewModel(){
 
     private var moviesRepository : MoviesRepository = MoviesRepository()
 
-    private val moviesList : MutableLiveData<List<Movies>> = MutableLiveData()
+    private val moviesList: MutableLiveData<List<Movies>> = MutableLiveData()
 
     fun getMovies() {
         viewModelScope.launch (Dispatchers.IO){
@@ -21,7 +21,7 @@ class MoviesViewModel : ViewModel(){
         }
     }
     fun observeMovies(
-        lifecycleOwner: LifecycleOwner,
-        action: (List<Movies>) -> Unit
+            lifecycleOwner: LifecycleOwner,
+            action: (List<Movies>) -> Unit
     ) = moviesList.observe(lifecycleOwner, { action(it)})
 }
