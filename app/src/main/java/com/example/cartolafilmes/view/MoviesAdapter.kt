@@ -10,9 +10,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cartolafilmes.R
 import com.example.cartolafilmes.model.Movie
+import com.example.cartolafilmes.utils.putExtraJson
 import com.google.android.material.circularreveal.CircularRevealGridLayout
 import com.squareup.picasso.Picasso
-import java.io.Serializable
 
 class MoviesAdapter (private val movies: List<Movie>, private val context: Context)
     : RecyclerView.Adapter<MoviesAdapter.ViewHolder>(){
@@ -33,9 +33,9 @@ class MoviesAdapter (private val movies: List<Movie>, private val context: Conte
             Picasso.get().load(BASE_URL_IMAGE+movies[position].posterPath).into(holder.posterPath)
         holder.title.text = movies[position].title
         holder.moviesView.setOnClickListener{
-            val intent = Intent(holder.moviesView.context, DetailsMovies ::class.java)
-            intent.putExtra("extra_movies", movies[position])
-            holder.moviesView.context.startActivity(intent)
+            val intent = Intent(context, DetailsMovies ::class.java)
+            intent.putExtraJson(movies[position])
+            context.startActivity(intent)
         }
     }
 

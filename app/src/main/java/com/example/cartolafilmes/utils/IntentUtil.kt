@@ -1,6 +1,7 @@
 package com.example.cartolafilmes.utils
 
 import android.content.Intent
+import com.example.cartolafilmes.response.Movies
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
@@ -18,7 +19,7 @@ fun Intent.putExtraJson(src: Any){
 fun <T> Intent.getJsonExtra(`class`: Class<T>): T? {
     val stringExtra = getStringExtra(DEFALT_NAME)
     if (stringExtra != null){
-        return IntentUtil.gson.fromJson<T>(stringExtra, `class`)
+        return IntentUtil.gson.fromJson(stringExtra, `class`)
     }
     return null
 }

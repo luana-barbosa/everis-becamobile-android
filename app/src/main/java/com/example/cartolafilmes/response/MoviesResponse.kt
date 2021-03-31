@@ -12,6 +12,7 @@ data class Movies (
 
     var overview: String? = "",
 
+    @SerializedName("release_date")
     var releaseDate: String? = "",
 
     @SerializedName("backdrop_path")
@@ -20,6 +21,7 @@ data class Movies (
     @SerializedName("poster_path")
     var posterPath: String? = "",
 
+    @SerializedName("vote_average")
     var voteAverage: String? = "",
 
     var popularity: String? = "",
