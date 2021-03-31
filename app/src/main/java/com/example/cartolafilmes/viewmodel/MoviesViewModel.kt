@@ -21,7 +21,7 @@ class MoviesViewModel : ViewModel(){
         }
     }
     fun observeMovies(
-            lifecycleOwner: LifecycleOwner,
-            action: (List<Movie>) -> Unit
+        lifecycleOwner: LifecycleOwner,
+        action: (List<Movie>) -> Unit
     ) = moviesList.observe(lifecycleOwner, { action(it)})
 }

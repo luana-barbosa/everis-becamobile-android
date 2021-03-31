@@ -30,11 +30,11 @@ class MoviesAdapter (private val movies: List<Movie>, private val context: Conte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if(movies[position].posterPath.isNotEmpty())
-            Picasso.get().load(movies[position].posterPath).into(holder.posterPath)
+            Picasso.get().load(BASE_URL_IMAGE+movies[position].posterPath).into(holder.posterPath)
         holder.title.text = movies[position].title
         holder.moviesView.setOnClickListener{
             val intent = Intent(holder.moviesView.context, DetailsMovies ::class.java)
-            intent.putExtra("extra_movies", movies[position] as Serializable)
+            intent.putExtra("extra_movies", movies[position])
             holder.moviesView.context.startActivity(intent)
         }
     }
@@ -43,6 +43,9 @@ class MoviesAdapter (private val movies: List<Movie>, private val context: Conte
         val title: TextView = itemView.findViewById(R.id.title_movie)
         val posterPath: ImageView = itemView.findViewById(R.id.poster_movie)
         val moviesView: CircularRevealGridLayout = itemView.findViewById(R.id.moviesView)
+    }
 
+    companion object {
+        const val BASE_URL_IMAGE = "https://image.tmdb.org/t/p/original"
     }
 }

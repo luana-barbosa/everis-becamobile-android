@@ -2,17 +2,12 @@ package com.example.cartolafilmes.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
 import com.example.cartolafilmes.R
 import com.example.cartolafilmes.model.Movie
 import com.example.cartolafilmes.response.Movies
-import com.example.cartolafilmes.utils.getJsonExtra
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_movies.*
 import kotlinx.android.synthetic.main.activity_details_movies.title_movie
-import kotlinx.android.synthetic.main.movie_item.*
-import kotlinx.android.synthetic.main.movie_item.poster_movie as poster_movie1
 
 class DetailsMovies : AppCompatActivity() {
 
@@ -22,7 +17,7 @@ class DetailsMovies : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_movies)
 
-        movies = intent.getSerializableExtra("movie_extra") as Movies
+        movies = intent.getParcelableExtra<Movie>("movie_extra") as Movies
         title_movie.text = movies.title
         overview_movie.text = movies.overview
         date_movie.text = movies.releaseDate

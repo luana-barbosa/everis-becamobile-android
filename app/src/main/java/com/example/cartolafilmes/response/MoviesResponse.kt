@@ -1,6 +1,6 @@
 package com.example.cartolafilmes.response
 
-import kotlinx.serialization.SerialName
+import com.google.gson.annotations.SerializedName
 
 data class MoviesListResponse(
     var results: ArrayList<Movies>? = null,
@@ -8,17 +8,19 @@ data class MoviesListResponse(
 )
 
 data class Movies (
-var title: String? = "",
+    var title: String? = "",
 
-var overview: String? = "",
+    var overview: String? = "",
 
-var releaseDate: String? = "",
+    var releaseDate: String? = "",
 
-var backdropPath: String? = "",
+    @SerializedName("backdrop_path")
+    var backdropPath: String? = "",
 
-var posterPath: String? = "",
+    @SerializedName("poster_path")
+    var posterPath: String? = "",
 
-var voteAverage: String? = "",
+    var voteAverage: String? = "",
 
-var popularity: String? = "",
+    var popularity: String? = "",
 )
