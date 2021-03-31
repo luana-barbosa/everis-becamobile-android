@@ -16,30 +16,30 @@
 
         <ImageView
             android:id="@+id/backdrop_movie"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="410dp"
+            android:layout_height="235dp"
             android:background="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/backdrop_guideline"
+            app:layout_constraintBottom_toTopOf="@+id/backdrop_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_cd"
-            android:layout_width="128dp"
+            android:layout_width="117dp"
             android:layout_height="172dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
             app:cardCornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/backdrop_guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/backdrop_guideline">
 
-        <ImageView
-            android:id="@+id/poster_movie"
-            android:background="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <ImageView
+                android:id="@+id/poster_movie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
 
         </androidx.cardview.widget.CardView>
 
@@ -48,42 +48,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4" />
+            app:layout_constraintGuide_percent="0.36" />
 
         <TextView
             android:id="@+id/title_movie"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/alegreya_sc"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/movie_cd"
-            app:layout_constraintTop_toBottomOf="@+id/backdrop_guideline"/>
+            app:layout_constraintTop_toBottomOf="@+id/backdrop_guideline" />
+
         <TextView
             android:id="@+id/date_movie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="12sp"
+            android:layout_width="75dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="28dp"
             android:fontFamily="@font/alegreya_sc"
-            tools:text="22/20/2020"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/overview_movie"
             app:layout_constraintStart_toStartOf="@+id/title_movie"
-            app:layout_constraintTop_toBottomOf="@+id/title_movie"/>
+            app:layout_constraintTop_toBottomOf="@+id/title_movie"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="22/20/2020" />
 
         <TextView
             android:id="@+id/overview_movie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/alegreya_sc"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,11 +108,26 @@
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/overview_movie"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.844"
+            app:layout_constraintHorizontal_bias="0.758"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movie_cd"
-            app:layout_constraintVertical_bias="0.205"
+            app:layout_constraintVertical_bias="0.222"
             tools:text="6.7" />
+
+        <TextView
+            android:id="@+id/date_lanc"
+            android:layout_width="190dp"
+            android:layout_height="20dp"
+            android:fontFamily="@font/alegreya_sc"
+            android:text="Data de Lançamento:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/date_movie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.335"
+            app:layout_constraintStart_toStartOf="@+id/title_movie"
+            app:layout_constraintTop_toBottomOf="@+id/title_movie"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

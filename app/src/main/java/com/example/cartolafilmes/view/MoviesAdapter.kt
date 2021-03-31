@@ -34,8 +34,8 @@ class MoviesAdapter (private val movies: List<Movie>, private val context: Conte
         holder.title.text = movies[position].title
         holder.moviesView.setOnClickListener{
             val intent = Intent(context, DetailsMovies ::class.java)
-            intent.putExtraJson(movies[position])
-            context.startActivity(intent)
+            intent.putExtra("extra_movie",movies[position])
+            holder.moviesView.context.startActivity(intent)
         }
     }
 

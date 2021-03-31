@@ -3,7 +3,7 @@
     <style name="Theme.CartolaFilmes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/gold</item>
         <item name="colorOnPrimary">@color/material_on_surface_emphasis_medium</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
