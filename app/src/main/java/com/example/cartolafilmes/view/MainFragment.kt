@@ -1,4 +1,4 @@
-package com.example.cartolafilmes
+package com.example.cartolafilmes.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.cartolafilmes.R
 import com.example.cartolafilmes.model.Movie
-import com.example.cartolafilmes.view.MoviesAdapter
 import com.example.cartolafilmes.viewmodel.MoviesViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 

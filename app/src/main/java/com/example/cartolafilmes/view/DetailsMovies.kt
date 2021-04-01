@@ -1,19 +1,21 @@
 package com.example.cartolafilmes.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.cartolafilmes.R
 import com.example.cartolafilmes.model.Movie
-import com.example.cartolafilmes.response.Movies
-import com.example.cartolafilmes.view.MoviesAdapter.Companion.BASE_URL_IMAGE
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_movies.*
-import kotlinx.android.synthetic.main.activity_details_movies.title_movie
 
 class DetailsMovies : AppCompatActivity() {
 
     private var movie : Movie? = null;
+    private lateinit var favoriteItemMenu: MenuItem;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,5 +35,12 @@ class DetailsMovies : AppCompatActivity() {
     companion object {
         const val BASE_URL_BACK = "https://image.tmdb.org/t/p/original"
         const val EXTRA_MOVIE = "extra_movie"
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.options_menu, menu)
+        favoriteItemMenu = menu?.findItem(R.id.ic_addFavorite)!!
+        return true
     }
 }
